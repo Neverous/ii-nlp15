@@ -1,0 +1,7 @@
+*.dat
+*grams
+*_min
+*_cleaned
+*.txt
+__pycache__
+dane_pozytywistyczne/

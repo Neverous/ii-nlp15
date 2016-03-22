@@ -1,0 +1,24 @@
+% start NP
+
+NP[0=?a, 1=?b, 2=?c]        -> SUBST[0=?a, 1=?b, 2=?c]
+NP[0=?a, 1=?b, 2=?c]        -> _ADJ[0=?a, 1=?b, 2=?c] NP[0=?a, 1=?b, 2=?c]
+NP[0=?a, 1=?b, 2=?c]        -> NP[0=?a, 1=?b, 2=?c] _ADJ[0=?a, 1=?b, 2=?c]
+NP[0=?a, 1=?b, 2=?c]        -> NP[0=?a, 1=?b, 2=?c] NP[1="gen"]
+NP[0="pl", 1="gen", 2=?c]   -> NP[1="gen"] "," NP[1="gen", 2=?c]
+NP[0="pl", 1="nom", 2=?c]   -> NP[1="nom"] "," NP[1="nom", 2=?c]
+NP[0="pl", 1="gen", 2=?c]   -> NP[1="gen"] "i" NP[1="gen", 2=?c]
+NP[0="pl", 1="nom", 2=?c]   -> NP[1="nom"] "i" NP[1="nom", 2=?c]
+NP[0="pl", 1="acc", 2=?c]   -> NP[1="acc"] "i" NP[1="acc", 2=?c]
+NP[0=?a, 1=?b, 2=?c]        -> NUM[0=?a, 2=?c] NP[0=?a, 1="gen", 2=?c]
+NP[0=?a, 1="gen", 2=?c]     -> GER[1="gen"] NP[0=?a, 1="nom", 2=?c]
+NP[0=?a, 1="nom", 2=?c]     -> GER[1="nom"] NP[0=?a, 1="gen", 2=?c]
+NP[0=?a, 1=?b, 2=?c]        -> PACT[0=?a, 1=?b, 2=?c] NP[0=?a, 1=?b, 2=?c]
+NP[0=?a, 1=?b, 2=?c]        -> ADJ "r" "."
+NP[0=?a, 1=?b, 2=?c]        -> ADJ "r"
+
+_ADJ[0=?a, 1=?b, 2=?c]      -> ADV _ADJ[0=?a, 1=?b, 2=?c]
+_ADJ[0=?a, 1=?b, 2=?c]      -> ADJA "-" _ADJ[0=?a, 1=?b, 2=?c]
+_ADJ[0=?a, 1=?b, 2=?c]      -> ADJ[0=?a, 1=?b, 2=?c]
+_ADJ[0=?a, 1=?b, 2=?c]      -> PPAS[0=?a, 1=?b, 2=?c]
+_ADJ[0=?a, 1=?b, 2=?c]      -> _ADJ[0=?a, 1=?b, 2=?c] "," _ADJ[0=?a, 1=?b, 2=?c]
+_ADJ[0=?a, 1=?b, 2=?c]      -> _ADJ[0=?a, 1=?b, 2=?c] "i" _ADJ[0=?a, 1=?b, 2=?c]
